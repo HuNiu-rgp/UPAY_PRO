@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: upay_pro
+    ports:
+      - "8090:8090"
+    environment:
+      TZ: "Asia/Shanghai"
+      UPAY_HTTP_PORT: "8090"
+      UPAY_REDIS_HOST: "127.0.0.1"
+      UPAY_REDIS_PORT: "6379"
+      UPAY_REDIS_DB: "0"
+    volumes:
+      - upay_logs:/app/upay_pro/logs
+      - upay_db:/app/upay_pro/DBS
+    restart: always
+
+volumes:
+  upay_logs:
+  upay_db:

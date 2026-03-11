@@ -86,10 +86,10 @@ amd64 架构的机器，请使用以下命令拉取镜像：
 docker run -d \
   --name upay_pro \
   -p 8090:8090 \
-  -v upay_logs:/app/logs \
-  -v upay_db:/app/DBS \
+  -v upay_logs:/app/upay_pro/logs \
+  -v upay_db:/app/upay_pro/DBS \
   --restart always \
-wangergou111/upay:latest
+  huniu233/upay_pro:latest
 ```
 
 arm64 架构的机器，请使用以下命令拉取镜像：
@@ -98,10 +98,10 @@ arm64 架构的机器，请使用以下命令拉取镜像：
 docker run -d \
   --name upay_pro \
   -p 8090:8090 \
-  -v upay_logs:/app/logs \
-  -v upay_db:/app/DBS \
+  -v upay_logs:/app/upay_pro/logs \
+  -v upay_db:/app/upay_pro/DBS \
   --restart always \
-wangergou111/upay:latest-arm64
+  huniu233/upay_pro:latest
 ```
 
 默认日志挂载路径为：
